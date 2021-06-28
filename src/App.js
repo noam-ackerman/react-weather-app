@@ -11,7 +11,7 @@ function App() {
       </div>
       <p className="sourceLine">
         <a
-          href="https://github.com/noam-ackerman/Weather-App"
+          href="https://github.com/noam-ackerman/react-weather-app"
           target="_blank"
           rel="noreferrer"
           className="codeLink"
