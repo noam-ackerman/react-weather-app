@@ -7,7 +7,7 @@ export default function ExtraNotes(props) {
     <div className="notesSection">
       <div className="description">{props.description}</div>
       <div className="humidityAndWind">
-        Humidity: {props.humidity}% • Wind: {props.wind}km/h
+        Humidity: {props.humidity}% • Wind: {props.wind} km/h
       </div>
     </div>
   );

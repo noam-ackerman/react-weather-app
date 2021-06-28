@@ -7,6 +7,24 @@
   text-align: center;
   display: block;
   margin: 40px auto;
-  max-width: 530px;
+  margin-bottom: 10px;
+  max-width: 600px;
   box-shadow: 7px 7px 30px rgb(0, 0, 0, 0.12);
+}
+
+.sourceLine {
+  color: #b8ff80;
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 40px;
+}
+
+.codeLink {
+  color: #b8ff80;
+  margin-top: 0;
+}
+
+.codeLink:hover {
+  color: #f8b62d;
 }

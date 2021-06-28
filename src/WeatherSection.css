@@ -1,8 +1,6 @@
 .weatherSection {
   display: flex;
   margin: 0 auto;
-  align-items: center;
-  justify-content: center;
   max-width: 72%;
 }
 
@@ -10,19 +8,19 @@
   flex: 50%;
   text-align: start;
   margin-top: 30px;
+  margin-right: 70px;
 }
 
 .rightSide {
   flex: 50%;
   text-align: center;
-  margin-top: 45px;
+  margin-top: 43px;
   position: relative;
-  top: -5px;
-  right: -16px;
+  right: -15px;
 }
 
 .cityTitle h1 {
-  font-size: 50px;
+  font-size: 40px;
   line-height: 70px;
   font-weight: bold;
   text-transform: uppercase;
@@ -80,7 +78,7 @@
 }
 
 .notesSection {
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 .description {
@@ -91,6 +89,6 @@
 .humidityAndWind {
   margin-top: 4px;
   margin-right: 6px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
 }
