@@ -13,6 +13,7 @@ export default function WeatherSection() {
     <div className="weatherSection">
       <div className="leftSide">
         <City value="London" />
+        <div className="noteDate">Latest data update:</div>
         <Date day="Thursday" hour={14} minutes={30} />
         <CurrentTemp CelsiusTemp={25} FahrenheitTemp="" />
       </div>
