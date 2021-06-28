@@ -1,0 +1,96 @@
+.weatherSection {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  max-width: 72%;
+}
+
+.leftSide {
+  flex: 50%;
+  text-align: start;
+  margin-top: 30px;
+}
+
+.rightSide {
+  flex: 50%;
+  text-align: center;
+  margin-top: 45px;
+  position: relative;
+  top: -5px;
+  right: -16px;
+}
+
+.cityTitle h1 {
+  font-size: 50px;
+  line-height: 70px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #2bbefd;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.Date {
+  line-height: 35px;
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 1.6px;
+  color: #fcff77;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.currentCelsiusTemp {
+  font-weight: 500;
+  font-size: 55px;
+  line-height: 65px;
+  letter-spacing: 0.88px;
+  color: #000000;
+}
+.currentfahrenheitTemp {
+  font-weight: 500;
+  font-size: 55px;
+  line-height: 65px;
+  letter-spacing: 0.88px;
+  color: #000000;
+}
+
+.celsiusAndFahrenheit {
+  font-weight: 200;
+  font-size: 40px;
+  letter-spacing: 0.88px;
+  color: #000000;
+}
+
+.celsiusLink,
+.fahrenheitLink {
+  color: #000000;
+  text-decoration: none;
+}
+
+.celsiusLink:hover,
+.fahrenheitLink:hover {
+  color: #2bbefd;
+}
+
+.currentIcon {
+  width: 140px;
+}
+
+.notesSection {
+  margin-top: 6px;
+}
+
+.description {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.humidityAndWind {
+  margin-top: 4px;
+  margin-right: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}

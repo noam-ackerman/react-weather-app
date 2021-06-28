@@ -1,9 +1,12 @@
 import "./App.css";
+import SearchCity from "./SearchCity";
+import Forecast from "./Forecast";
 
 function App() {
   return (
-    <div className="App">
-      <h1>HELLO there</h1>
+    <div className="Box">
+      <SearchCity />
+      <Forecast />
     </div>
   );
 }

@@ -1,0 +1,31 @@
+.SearchEngine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-right: 5px;
+}
+
+.cityInput {
+  margin-right: 10px;
+  width: 320px;
+  color: black;
+  font-size: 16px;
+  background: white;
+  border: 1.5px solid black;
+  border-radius: 8px;
+  padding: 7px 3.5px;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
+  font-weight: 500;
+}
+
+.searchButton {
+  font-size: 16px;
+  color: black;
+  background: white;
+  border: 1.5px solid black;
+  border-radius: 8px;
+  padding: 7px 8px;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
+  font-weight: 500;
+}

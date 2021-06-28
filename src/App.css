@@ -1,8 +1,12 @@
-.App {
+.Box {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(127.99deg, #b8ff80 9.62%, #4cc9fe 98.61%);
+  border: 1.5px solid #000000;
+  box-sizing: border-box;
+  border-radius: 8px;
   text-align: center;
-}
-
-h1 {
-  color: red;
-  font-size: 30px;
+  display: block;
+  margin: 40px auto;
+  max-width: 530px;
+  box-shadow: 7px 7px 30px rgb(0, 0, 0, 0.12);
 }
