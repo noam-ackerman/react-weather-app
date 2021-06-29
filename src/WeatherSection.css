@@ -13,7 +13,9 @@
 .rightSide {
   flex: 37%;
   text-align: center;
-  margin-top: 43px;
+  margin-top: 46px;
+  position: relative;
+  right: -6px;
 }
 
 .cityTitle h1 {
@@ -84,7 +86,7 @@
 }
 
 .notesSection {
-  margin-top: 5px;
+  margin-top: 2.5px;
 }
 
 .description {

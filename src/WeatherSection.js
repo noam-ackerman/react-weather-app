@@ -19,7 +19,7 @@ export default function WeatherSection() {
       </div>
       <div className="rightSide">
         <CurrentIcon icon={partlySunny} />
-        <ExtraNotes description="Partly Clouded" wind={43} humidity={40} />
+        <ExtraNotes description="Partly Clouded" wind={4} humidity={40} />
       </div>
     </div>
   );
