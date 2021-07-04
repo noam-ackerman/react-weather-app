@@ -8,18 +8,22 @@ import partlySunny from "./img/partlySunny.png";
 
 import "./WeatherSection.css";
 
-export default function WeatherSection() {
+export default function WeatherSection(props) {
   return (
     <div className="weatherSection">
       <div className="leftSide">
-        <City value="London" />
+        <City value={props.data.city} />
         <div className="noteDate">Latest data update:</div>
         <Date day="Thursday" hour={14} minutes={30} />
-        <CurrentTemp CelsiusTemp={25} FahrenheitTemp="" />
+        <CurrentTemp CelsiusTemp={props.data.temp} FahrenheitTemp="" />
       </div>
       <div className="rightSide">
         <CurrentIcon icon={partlySunny} />
-        <ExtraNotes description="Partly Clouded" wind={4} humidity={40} />
+        <ExtraNotes
+          description={props.data.description}
+          wind={props.data.wind}
+          humidity={props.data.humidity}
+        />
       </div>
     </div>
   );
