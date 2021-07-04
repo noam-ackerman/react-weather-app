@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="Box">
-          <SearchCity />
+          <SearchCity defaultCity="london" />
           <Forecast />
         </div>
         <p className="sourceLine">

@@ -14,8 +14,8 @@ export default function WeatherSection(props) {
       <div className="leftSide">
         <City value={props.data.city} />
         <div className="noteDate">Latest data update:</div>
-        <Date day="Thursday" hour={14} minutes={30} />
-        <CurrentTemp CelsiusTemp={props.data.temp} FahrenheitTemp="" />
+        <Date date={props.data.date} />
+        <CurrentTemp CelsiusTemp={props.data.temp} />
       </div>
       <div className="rightSide">
         <CurrentIcon icon={partlySunny} />

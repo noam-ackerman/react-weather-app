@@ -4,8 +4,9 @@ import axios from "axios";
 
 import "./SearchCity.css";
 
-export default function SearchCity() {
-  let [weatherData, setWeatherData] = useState({ ready: false });
+export default function SearchCity(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -15,17 +16,35 @@ export default function SearchCity() {
       wind: Math.round(response.data.wind.speed),
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
+      date: new Date(response.data.dt * 1000),
     });
   }
+
+  function Search() {
+    const apiKey = "b5a3097ed58959eb47ee948058cf6636";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    Search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   let SearchEngine = (
     <div className="SearchEngine">
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="search"
           placeholder="Type a City..."
           autoComplete="off"
           className="cityInput"
           id="city-input"
+          onChange={handleCityChange}
         />
         <input type="submit" value="Search" className="searchButton" />
       </form>
@@ -40,10 +59,7 @@ export default function SearchCity() {
       </div>
     );
   } else {
-    const apiKey = "b5a3097ed58959eb47ee948058cf6636";
-    let city = "London";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    Search();
   }
   return (
     <div className="load">
