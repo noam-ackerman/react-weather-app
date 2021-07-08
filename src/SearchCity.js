@@ -44,6 +44,7 @@ export default function SearchCity(props) {
           autoComplete="off"
           className="cityInput"
           id="city-input"
+          size="42"
           onChange={handleCityChange}
         />
         <input type="submit" value="Search" className="searchButton" />

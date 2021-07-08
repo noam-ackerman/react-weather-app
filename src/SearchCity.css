@@ -8,7 +8,7 @@
 
 .cityInput {
   margin-right: 10px;
-  width: 380px;
+  max-width: 100%;
   color: black;
   font-size: 16px;
   background: white;

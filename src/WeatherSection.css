@@ -13,7 +13,7 @@
 .rightSide {
   flex: 37%;
   text-align: center;
-  margin-top: 46px;
+  margin-top: 51px;
   position: relative;
   right: -6px;
 }
@@ -81,12 +81,8 @@
   color: #2bbefd;
 }
 
-.currentIcon {
-  width: 140px;
-}
-
 .notesSection {
-  margin-top: 2.5px;
+  margin-top: 4px;
 }
 
 .description {
@@ -96,7 +92,7 @@
 }
 
 .humidityAndWind {
-  margin-top: 4px;
+  margin-top: 6px;
   margin-right: 6px;
   font-size: 11px;
   font-weight: 500;
