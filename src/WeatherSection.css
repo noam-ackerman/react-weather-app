@@ -76,8 +76,7 @@
   text-decoration: none;
 }
 
-.celsiusLink:hover,
-.fahrenheitLink:hover {
+a:hover {
   color: #2bbefd;
 }
 

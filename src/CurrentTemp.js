@@ -20,10 +20,8 @@ export default function CurrentTemp(props) {
       <div className="tempSection">
         <span className="celsiusAndFahrenheit">
           <span className="currentCelsiusTemp">{celsiusTemp}</span>
-          <a href="/" onClick={showCelsius} className="celsiusLink">
-            °C
-          </a>
-          /<span className="currentfahrenheitTemp"></span>
+          <span className="celsiusLink">°C</span>/
+          <span className="currentfahrenheitTemp"></span>
           <a href="/" onClick={showFahrenheit} className="fahrenheitLink">
             °F
           </a>
@@ -34,13 +32,11 @@ export default function CurrentTemp(props) {
     return (
       <div className="tempSection">
         <span className="celsiusAndFahrenheit">
+          <span className="currentfahrenheitTemp">{fahrenheitTemp}</span>
+          <span className="fahrenheitLink">°F</span>/
           <span className="currentCelsiusTemp"></span>
           <a href="/" onClick={showCelsius} className="celsiusLink">
             °C
-          </a>
-          /<span className="currentfahrenheitTemp">{fahrenheitTemp}</span>
-          <a href="/" onClick={showFahrenheit} className="fahrenheitLink">
-            °F
           </a>
         </span>
       </div>
