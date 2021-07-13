@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import DayForecast from "./DayForecast";
-import RainyIcon from "./img/rainy.png";
-import SunnyIcon from "./img/sunny.png";
+import axios from "axios";
 
 import "./Forecast.css";
+import { cleanup } from "@testing-library/react";
 
-export default function Forecast() {
-  return (
-    <div className="row forecastSection">
-      <DayForecast day="Thu" maxTemp={19} minTemp={13} icon={RainyIcon} />
-      <DayForecast day="Fri" maxTemp={28} minTemp={20} icon={SunnyIcon} />
-      <DayForecast day="Sat" maxTemp={17} minTemp={12} icon={RainyIcon} />
-      <DayForecast day="Sun" maxTemp={18} minTemp={14} icon={RainyIcon} />
-      <DayForecast day="Mon" maxTemp={25} minTemp={21} icon={SunnyIcon} />
-      <DayForecast day="Tue" maxTemp={24} minTemp={19} icon={SunnyIcon} />
-    </div>
-  );
+export default function Forecast(props) {
+  let [loaded, setLoaded] = useState(false);
+  let [forecastData, setForecastData] = useState(null);
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coords]);
+
+  function handleResponse(response) {
+    console.log(response.data.daily);
+    setForecastData(response.data.daily);
+    setLoaded(true);
+  }
+
+  if (loaded) {
+    return (
+      <div className="row forecastSection">
+        {forecastData.map(function (daily, index) {
+          if (index < 6) {
+            return (
+              <div className="col" key={index}>
+                <DayForecast data={daily} />
+              </div>
+            );
+          }
+        })}
+      </div>
+    );
+  } else {
+    let apiKey = "b5a3097ed58959eb47ee948058cf6636";
+    let lon = props.coords.lon;
+    let lat = props.coords.lat;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return null;
+  }
 }

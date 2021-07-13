@@ -2,26 +2,20 @@
   margin-left: 55px;
   margin-right: 55px;
   margin-top: 40px;
-  margin-bottom: 55px;
 }
 
 .day {
+  margin-bottom: 5px;
   font-weight: bold;
-  font-size: 19px;
+  font-size: 18px;
   text-align: center;
   letter-spacing: 0.88px;
-  color: #ffbf00;
+  color: #72ee59;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
 
-.forecastIcon {
-  margin-top: 8px;
-  width: 35px;
-}
-
 .forecastTemp {
-  margin-top: 8px;
   font-size: 13px;
 }
 

@@ -1,14 +1,12 @@
 import "./App.css";
 import SearchCity from "./SearchCity";
-import Forecast from "./Forecast";
 
 function App() {
   return (
     <div className="App">
       <div className="container">
         <div className="Box">
-          <SearchCity defaultCity="london" />
-          <Forecast />
+          <SearchCity defaultCity="tokyo" />
         </div>
         <p className="sourceLine">
           <a
