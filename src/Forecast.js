@@ -3,7 +3,6 @@ import DayForecast from "./DayForecast";
 import axios from "axios";
 
 import "./Forecast.css";
-import { cleanup } from "@testing-library/react";
 
 export default function Forecast(props) {
   let [loaded, setLoaded] = useState(false);
@@ -29,6 +28,8 @@ export default function Forecast(props) {
                 <DayForecast data={daily} />
               </div>
             );
+          } else {
+            return null;
           }
         })}
       </div>
