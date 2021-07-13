@@ -29,6 +29,10 @@
   font-weight: 500;
 }
 
+.searchButton:hover {
+  background: #eae8e8;
+}
+
 .loading {
   font-size: 40px;
   line-height: 41px;
