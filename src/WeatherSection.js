@@ -12,7 +12,7 @@ export default function WeatherSection(props) {
         <div className="cityTitle">
           <h1>{props.data.city}</h1>
         </div>
-        <div className="noteDate">Latest data update:</div>
+        <div className="noteDate">Local time:</div>
         <Date date={props.data.date} />
         <CurrentTemp CelsiusTemp={props.data.temp} />
       </div>

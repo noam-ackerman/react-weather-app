@@ -17,7 +17,7 @@ export default function SearchCity(props) {
       wind: Math.round(response.data.wind.speed),
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
-      date: new Date(response.data.dt * 1000),
+      date: response.data,
       coords: response.data.coord,
     });
   }
