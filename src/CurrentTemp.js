@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { UnitContext } from "./UnitContext";
 
 import "./WeatherSection.css";
 
 export default function CurrentTemp(props) {
-  let [unit, setUnit] = useState("celsius");
+  const [unit, setUnit] = useContext(UnitContext);
   let celsiusTemp = props.CelsiusTemp;
   let fahrenheitTemp = Math.round((celsiusTemp * 9) / 5 + 32);
   function showFahrenheit(event) {
