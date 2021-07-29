@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import WeatherSection from "./WeatherSection";
 import Forecast from "./Forecast";
+import { UnitName } from "./UnitContext";
 import axios from "axios";
 
 import "./SearchCity.css";
@@ -56,11 +57,13 @@ export default function SearchCity(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="SearchAndDisplay">
-        {SearchEngine}
-        <WeatherSection data={weatherData} />
-        <Forecast coords={weatherData.coords} />
-      </div>
+      <UnitName>
+        <div className="SearchAndDisplay">
+          {SearchEngine}
+          <WeatherSection data={weatherData} />
+          <Forecast coords={weatherData.coords} />
+        </div>
+      </UnitName>
     );
   } else {
     Search();
