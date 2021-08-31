@@ -30,7 +30,7 @@ export default function DayForecast(props) {
     );
   } else if (unit === "fahrenheit") {
     return (
-      <div>
+      <div className="eachDay">
         <div className="day">{day()}</div>
         <Icon icon={props.data.weather[0].icon} size={30} />
         <div className="forecastTemp">
