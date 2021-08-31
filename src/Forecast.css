@@ -26,3 +26,9 @@
 .maxTemp {
   font-weight: 900;
 }
+
+@media (max-width: 580px) {
+  .eachDay {
+    margin: 10px;
+  }
+}

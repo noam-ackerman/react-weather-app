@@ -97,3 +97,15 @@ a:hover {
   font-size: 11px;
   font-weight: 500;
 }
+
+@media (max-width: 580px) {
+  .weatherSection {
+    display: block;
+  }
+  .rightSide {
+    margin-top: 15px;
+  }
+  .leftSide {
+    text-align: center;
+  }
+}
