@@ -27,8 +27,27 @@
   font-weight: 900;
 }
 
-@media (max-width: 580px) {
+@media (max-width: 550px) {
+  .forecastSection {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+
+@media (max-width: 435px) {
+  .forecastSection {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
   .eachDay {
     margin: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .forecastSection {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
