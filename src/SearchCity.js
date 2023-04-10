@@ -2,31 +2,31 @@ import React, { useState } from "react";
 import WeatherSection from "./WeatherSection";
 import Forecast from "./Forecast";
 import { UnitName } from "./UnitContext";
-import axios from "axios";
 
 import "./SearchCity.css";
 
 export default function SearchCity(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      city: response.data.name,
-      temp: Math.round(response.data.main.temp),
-      humidity: response.data.main.humidity,
-      wind: Math.round(response.data.wind.speed),
-      description: response.data.weather[0].description,
-      icon: response.data.weather[0].icon,
-      date: response.data,
-      coords: response.data.coord,
+      city: response.name,
+      temp: Math.round(response.main.temp),
+      humidity: response.main.humidity,
+      wind: Math.round(response.wind.speed),
+      description: response.weather[0].description,
+      icon: response.weather[0].icon,
+      date: response,
+      coords: response.coord,
     });
   }
 
   function Search() {
     const apiKey = "b5a3097ed58959eb47ee948058cf6636";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    fetch(apiUrl).then(resp => {return resp.json()}).then(data => {handleResponse(data)})
   }
 
   function handleSubmit(event) {
