@@ -29,3 +29,16 @@
 .codeLink:hover {
   color: #72ee59;
 }
+
+@media (max-width:580px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  .Box {
+    margin-top: 0;
+    border-radius: 0;
+    border: none;
+  }
+}
