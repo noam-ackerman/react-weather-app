@@ -10,6 +10,9 @@ export default function SearchCity(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
+    if(response.cod === "404") {
+      console.log(response.message);
+    } else {
     setWeatherData({
       ready: true,
       city: response.name,
@@ -21,6 +24,7 @@ export default function SearchCity(props) {
       date: response,
       coords: response.coord,
     });
+   }
   }
 
   function Search() {
