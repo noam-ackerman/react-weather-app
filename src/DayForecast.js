@@ -17,27 +17,24 @@ export default function DayForecast(props) {
     return day;
   }
 
-  if (unit === "celsius") {
-    return (
-      <div className="eachDay">
-        <div className="day">{day()}</div>
-        <Icon icon={props.data.weather[0].icon} size={30} />
-        <div className="forecastTemp">
+  return (
+    <div className="eachDay">
+      <div className="day">{day()}</div>
+      <Icon icon={props.data.weather[0].icon} size={30} />
+      <div className="forecastTemp">
+        {unit === "celsius" ?
+          <>
           <span className="minTemp">{celsiusMin}°</span>
           <span className="maxTemp"> {celsuisMax}°</span>
-        </div>
-      </div>
-    );
-  } else if (unit === "fahrenheit") {
-    return (
-      <div className="eachDay">
-        <div className="day">{day()}</div>
-        <Icon icon={props.data.weather[0].icon} size={30} />
-        <div className="forecastTemp">
+          </>
+        : 
+          <>
           <span className="minTemp">{fahrenheitMin}°</span>
           <span className="maxTemp"> {fahrenheitMax}°</span>
-        </div>
+          </>
+        }
       </div>
-    );
-  }
+    </div>
+  );
+
 }

@@ -49,20 +49,14 @@
   -webkit-text-stroke-color: black;
 }
 
-.currentCelsiusTemp {
+.currentTemp {
   font-weight: 500;
   font-size: 55px;
   line-height: 70px;
   letter-spacing: 0.88px;
   color: #000000;
 }
-.currentfahrenheitTemp {
-  font-weight: 500;
-  font-size: 55px;
-  line-height: 71px;
-  letter-spacing: 0.88px;
-  color: #000000;
-}
+
 
 .celsiusAndFahrenheit {
   font-weight: 200;
@@ -71,13 +65,13 @@
   color: #000000;
 }
 
-.celsiusLink,
-.fahrenheitLink {
+.currentUnit,
+a.conversionLink {
   color: #000000;
   text-decoration: none;
 }
 
-a:hover {
+a.conversionLink:hover {
   color: #2bbefd;
 }
 
