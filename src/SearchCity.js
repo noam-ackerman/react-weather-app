@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import WeatherSection from "./WeatherSection";
 import Forecast from "./Forecast";
 import { UnitName } from "./UnitContext";
+import {Oval } from 'react-loader-spinner'
 
 import "./SearchCity.css";
 
@@ -74,7 +75,20 @@ export default function SearchCity(props) {
   return (
     <div className="load">
       {SearchEngine}
-      <div className="loading">Loading...</div>
+      <div className="loading">
+        <Oval
+          height={80}
+          width={80}
+          color="#4fa94d"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel='oval-loading'
+          secondaryColor="#4fa94d"
+          strokeWidth={2}
+          strokeWidthSecondary={2}
+        />
+      </div>
     </div>
   );
 }
