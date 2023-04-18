@@ -9,6 +9,7 @@ import "./SearchCity.css";
 export default function SearchCity(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const cityInput = React.useRef()
 
   function handleResponse(response) {
     if(response.cod === "404") {
@@ -28,19 +29,15 @@ export default function SearchCity(props) {
    }
   }
 
-  function Search() {
+  React.useEffect(() => {
     const apiKey = "b5a3097ed58959eb47ee948058cf6636";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     fetch(apiUrl).then(resp => {return resp.json()}).then(data => {handleResponse(data)})
-  }
+  }, [city])
 
   function handleSubmit(event) {
     event.preventDefault();
-    Search();
-  }
-
-  function handleCityChange(event) {
-    setCity(event.target.value);
+    setCity(cityInput.current.value);
   }
 
   let SearchEngine = (
@@ -52,7 +49,7 @@ export default function SearchCity(props) {
           autoComplete="off"
           className="cityInput"
           id="city-input"
-          onChange={handleCityChange}
+          ref={cityInput}
         />
         <input type="submit" value="Search" className="searchButton" />
       </form>
@@ -70,25 +67,24 @@ export default function SearchCity(props) {
       </UnitName>
     );
   } else {
-    Search();
-  }
-  return (
-    <div className="load">
-      {SearchEngine}
-      <div className="loading">
-        <Oval
-          height={80}
-          width={80}
-          color="#4fa94d"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-          ariaLabel='oval-loading'
-          secondaryColor="#4fa94d"
-          strokeWidth={2}
-          strokeWidthSecondary={2}
-        />
+    return (
+      <div className="load">
+        {SearchEngine}
+        <div className="loading">
+          <Oval
+            height={80}
+            width={80}
+            color="#4fa94d"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+            ariaLabel='oval-loading'
+            secondaryColor="#4fa94d"
+            strokeWidth={2}
+            strokeWidthSecondary={2}
+          />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }

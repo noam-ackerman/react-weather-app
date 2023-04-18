@@ -10,7 +10,8 @@ export default function WeatherSection(props) {
     <div className="weatherSection">
       <div className="leftSide">
         <div className="cityTitle">
-          <h1>{props.data.city}</h1>
+          <span>{props.data.city}</span>
+          <span className="country">{props.data.date.sys.country}</span>
         </div>
         <div className="noteDate">Local time:</div>
         <Date date={props.data.date} />

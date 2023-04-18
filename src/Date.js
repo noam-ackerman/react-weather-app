@@ -5,15 +5,15 @@ import "./WeatherSection.css";
 export default function localDate(props) {
   //to display correct local time
   let localTimeZone = props.date.timezone / 3600;
-  let unixTimestamp = Date.now() / 1000;
-  let time = new Date(unixTimestamp * 1000);
-  let localHours = (time.getUTCHours() + localTimeZone + 24) % 24;
+  let time = new Date();
+  let utc = time.getTime() + (time.getTimezoneOffset() * 60000);
+  let localTime = new Date(utc + (3600000 * localTimeZone));
+  let localHours = localTime.getHours()
+  let localMinutes =  localTime.getMinutes()
   let hours = ("0" + localHours).slice(-2);
-  let minutes = ("0" + time.getMinutes()).slice(-2);
+  let minutes = ("0" + localMinutes).slice(-2);
   //to display correct local day
-  let day = new Date(props.date.dt * 1000);
-  let dayOffset = day.getTimezoneOffset() * 60;
-  day.setSeconds(day.getSeconds() + dayOffset + props.date.timezone);
+  let localDayIndex = localTime.getDay()
   let days = [
     "Sunday",
     "Monday",
@@ -23,7 +23,7 @@ export default function localDate(props) {
     "Friday",
     "Saturday",
   ];
-  let localDay = days[day.getDay()];
+  let localDay = days[localDayIndex];
   //
 
   return (
