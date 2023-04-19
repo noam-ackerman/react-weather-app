@@ -22,17 +22,8 @@ export default function DayForecast(props) {
       <div className="day">{day()}</div>
       <Icon icon={props.data.weather[0].icon} size={30} />
       <div className="forecastTemp">
-        {unit === "celsius" ?
-          <>
-          <span className="minTemp">{celsiusMin}°</span>
-          <span className="maxTemp"> {celsuisMax}°</span>
-          </>
-        : 
-          <>
-          <span className="minTemp">{fahrenheitMin}°</span>
-          <span className="maxTemp"> {fahrenheitMax}°</span>
-          </>
-        }
+        <span className="minTemp">{unit === "celsius" ? celsiusMin + "°" : fahrenheitMin + "°"}</span>
+        <span className="maxTemp"> {unit === "celsius" ? celsuisMax + "°" : fahrenheitMax + "°"}</span>
       </div>
     </div>
   );

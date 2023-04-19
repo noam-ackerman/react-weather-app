@@ -20,7 +20,7 @@ export default function CurrentTemp(props) {
   return (
     <div className="tempSection">
       <span className="celsiusAndFahrenheit">
-      {unit === "fahrenheit" ? <span className="currentTemp">{fahrenheitTemp}</span> : <span className="currentTemp">{celsiusTemp}</span>}
+      <span className="currentTemp">{unit === "fahrenheit" ? fahrenheitTemp : celsiusTemp}</span>
       <span className="currentUnit">{unit === "fahrenheit" ?  "°F" : "°C"}</span>/
         <a href="/" onClick={convertUnit} className="conversionLink">
         {unit === "fahrenheit" ?  "°C" : "°F"}
