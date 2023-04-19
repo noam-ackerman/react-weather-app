@@ -7,14 +7,19 @@ export default function Forecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecastData, setForecastData] = useState(null);
 
-  useEffect(() => {
-    setLoaded(false);
-  }, [props.coords]);
-
   function handleResponse(response) {
     setForecastData(response.daily);
     setLoaded(true);
   }
+
+  useEffect(() => {
+    let apiKey = "b5a3097ed58959eb47ee948058cf6636";
+    let lon = props.coords.lon;
+    let lat = props.coords.lat;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    fetch(apiUrl).then(resp => {return resp.json()}).then(data => {handleResponse(data)})
+    return () => {setLoaded(false);}
+  }, [props.coords]);
 
   if (loaded) {
     return (
@@ -33,12 +38,6 @@ export default function Forecast(props) {
       </div>
     );
   } else {
-    let apiKey = "b5a3097ed58959eb47ee948058cf6636";
-    let lon = props.coords.lon;
-    let lat = props.coords.lat;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-    fetch(apiUrl).then(resp => {return resp.json()}).then(data => {handleResponse(data)})
-
     return null;
   }
 }

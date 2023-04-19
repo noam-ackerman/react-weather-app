@@ -33,6 +33,9 @@ export default function SearchCity(props) {
     const apiKey = "b5a3097ed58959eb47ee948058cf6636";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     fetch(apiUrl).then(resp => {return resp.json()}).then(data => {handleResponse(data)})
+    return () => {
+      setWeatherData({ready:false})
+    }  
   }, [city])
 
   function handleSubmit(event) {
