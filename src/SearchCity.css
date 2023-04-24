@@ -41,6 +41,19 @@ form {
  margin: 100px auto;
 }
 
+.error {
+  font-size: 27px;
+  line-height: 41px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #2bbefd;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  word-break: break-word;
+  margin: 100px auto;
+}
+
 
 
 @media (max-width: 350px) {

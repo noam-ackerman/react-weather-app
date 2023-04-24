@@ -2,10 +2,13 @@ import React from "react";
 import Date from "./Date";
 import CurrentTemp from "./CurrentTemp";
 import CurrentIcon from "./Icon";
+import { UnitContext } from "./UnitContext";
 
 import "./WeatherSection.css";
 
 export default function WeatherSection(props) {
+  const [unit] = React.useContext(UnitContext);
+  let mph = (+props.data.wind * 0.621371).toFixed(1);
   return (
     <div className="weatherSection">
       <div className="leftSide">
@@ -22,7 +25,7 @@ export default function WeatherSection(props) {
         <div className="notesSection">
           <div className="description">{props.data.description}</div>
           <div className="humidityAndWind">
-            Humidity: {props.data.humidity}% • Wind: {props.data.wind} km/h
+            Humidity: {props.data.humidity}% • Wind: {unit === "celsius" ? props.data.wind + " km/h" : mph + " mi/h" }
           </div>
         </div>
       </div>
