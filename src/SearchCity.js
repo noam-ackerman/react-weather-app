@@ -57,7 +57,9 @@ export default function SearchCity(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    setCity(cityInput.current.value);
+    if(cityInput.current.value.trim().length !== 0) {
+      setCity(cityInput.current.value);
+    }
   }
 
   let SearchEngine = (
