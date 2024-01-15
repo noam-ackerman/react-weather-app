@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { UnitContext } from "./UnitContext";
+import { UnitContext } from "../UnitContext";
 import Icon from "./Icon";
 
-import "./Forecast.css";
+import "../styles/Forecast.css";
 
 export default function DayForecast(props) {
   const [unit] = useContext(UnitContext);
@@ -22,10 +22,14 @@ export default function DayForecast(props) {
       <div className="day">{day()}</div>
       <Icon icon={props.data.weather[0].icon} size={30} />
       <div className="forecastTemp">
-        <span className="minTemp">{unit === "celsius" ? celsiusMin + "°" : fahrenheitMin + "°"}</span>
-        <span className="maxTemp"> {unit === "celsius" ? celsuisMax + "°" : fahrenheitMax + "°"}</span>
+        <span className="minTemp">
+          {unit === "celsius" ? celsiusMin + "°" : fahrenheitMin + "°"}
+        </span>
+        <span className="maxTemp">
+          {" "}
+          {unit === "celsius" ? celsuisMax + "°" : fahrenheitMax + "°"}
+        </span>
       </div>
     </div>
   );
-
 }
