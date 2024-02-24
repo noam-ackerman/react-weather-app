@@ -23,11 +23,13 @@ export default function CurrentTemp(props) {
           {unit === "fahrenheit" ? fahrenheitTemp : celsiusTemp}
         </span>
         <span className="currentUnit">
-          {unit === "fahrenheit" ? "°F" : "°C"}
+          <sup>
+            <strong>{unit === "fahrenheit" ? "°F " : "°C "}</strong>
+          </sup>
         </span>
-        /
+        <sup style={{ top: "-0.55em" }}>|</sup>
         <a href="/" onClick={convertUnit} className="conversionLink">
-          {unit === "fahrenheit" ? "°C" : "°F"}
+          <sup>{unit === "fahrenheit" ? " °C" : " °F"}</sup>
         </a>
       </span>
     </div>
