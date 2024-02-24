@@ -61,6 +61,7 @@ export default function SearchCity(props) {
     event.preventDefault();
     if (cityInput.current.value.trim().length !== 0) {
       setCity(cityInput.current.value);
+      cityInput.current.value = "";
     }
   }
 
